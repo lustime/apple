@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="apple-biz" />
+        <module name="apple-common" />
+        <module name="apple-dao" />
+        <module name="apple-war" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="apple-biz" target="1.5" />
+      <module name="apple-common" target="1.5" />
+      <module name="apple-dao" target="1.5" />
+      <module name="apple-parent" target="1.5" />
+      <module name="apple-war" target="1.5" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
