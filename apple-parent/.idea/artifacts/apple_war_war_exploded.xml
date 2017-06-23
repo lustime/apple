@@ -7,7 +7,11 @@
           <element id="module-output" name="apple-war" />
         </element>
         <element id="directory" name="lib">
-          <element id="library" level="project" name="Maven: org.codehaus.groovy:groovy:2.4.5" />
+          <element id="library" level="project" name="Maven: org.spockframework:spock-core:0.6-groovy-1.7" />
+          <element id="library" level="project" name="Maven: junit:junit-dep:4.9" />
+          <element id="library" level="project" name="Maven: org.codehaus.groovy:groovy-all:1.7.10" />
+          <element id="library" level="project" name="Maven: org.hamcrest:hamcrest-core:1.2" />
+          <element id="library" level="project" name="Maven: mysql:mysql-connector-java:5.1.6" />
         </element>
       </element>
       <element id="directory" name="META-INF">
