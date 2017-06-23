@@ -1,4 +1,4 @@
-package com.suning.lumin;
+package com.suning.groovyTest;
 
 /**
  * Hello world!

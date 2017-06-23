@@ -1,4 +1,4 @@
-package com.suning.lumin;
+package com.suning.groovyTest;
 
 import junit.framework.Test;
 import junit.framework.TestCase;

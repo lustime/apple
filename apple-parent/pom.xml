@@ -15,5 +15,76 @@
         <module>../apple-biz</module>
     </modules>
 
+    <properties>
+        <project.parent.artifactId>apple-parent</project.parent.artifactId>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.12</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.codehaus.groovy</groupId>
+            <artifactId>groovy</artifactId>
+            <version>2.4.5</version>
+        </dependency>
+        <dependency>
+            <groupId>org.spockframework</groupId>
+            <artifactId>spock-core</artifactId>
+            <version>0.6-groovy-1.7</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <profiles>
+        <profile>
+            <id>dev</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <build>
+                <filters>
+                    <filter>../${project.parent.artifactId}/vars/vars.dev.properties</filter>
+                </filters>
+            </build>
+        </profile>
+        <profile>
+            <id>prd</id>
+            <activation>
+                <activeByDefault>false</activeByDefault>
+            </activation>
+            <build>
+                <filters>
+                    <filter>../${project.parent.artifactId}/vars/vars.prd.properties</filter>
+                </filters>
+            </build>
+        </profile>
+        <profile>
+            <id>pre</id>
+            <activation>
+                <activeByDefault>false</activeByDefault>
+            </activation>
+            <build>
+                <filters>
+                    <filter>../${project.parent.artifactId}/vars/vars.pre.properties</filter>
+                </filters>
+            </build>
+        </profile>
+        <profile>
+            <id>sit</id>
+            <activation>
+                <activeByDefault>false</activeByDefault>
+            </activation>
+            <build>
+                <filters>
+                    <filter>../${project.parent.artifactId}/vars/vars.sit.properties</filter>
+                </filters>
+            </build>
+        </profile>
+    </profiles>
 
 </project>
