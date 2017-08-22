@@ -1,3 +1,14 @@
+/*
+ * Copyright (C), 2002-2017, 苏宁易购电子商务有限公司
+ * FileName: MyConnection2.java
+ * Author:   17040407
+ * Date:     17-8-22 下午3:07
+ * Description: 智能风控系统
+ * History: //修改记录
+ * <author> <time> <version> <desc>
+ * 修改人姓名      修改时间      版本号        描述
+ */
+
 package sql;
 
 import org.junit.Test;
@@ -13,11 +24,26 @@ import java.util.UUID;
  * 效率较高的批量插入(mysql 5.1.13加了rewriteBatchedStatements参数，插入速度显著提升)
  */
 public class MyConnection2 {
+    /**
+     * The Url.
+     */
     public String url = "jdbc:mysql://10.37.88.66:3306/pcidssit?rewriteBatchedStatements=true";
+    /**
+     * The User.
+     */
     public String user = "selffabu";
+    /**
+     * The Password.
+     */
     public String password = "YNYQYM0c8u";
+    /**
+     * The Driver class.
+     */
     public String driverClass = "com.mysql.jdbc.Driver";
 
+    /**
+     * Test.
+     */
     @Test
     public void Test()
     {
