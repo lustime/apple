@@ -31,6 +31,6 @@ public class Single {
 
     public static final Single getInstance()
     {
-        return LazyHolder .instance;
+        return LazyHolder.instance;
     }
 }
