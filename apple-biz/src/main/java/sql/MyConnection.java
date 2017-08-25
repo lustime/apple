@@ -2,22 +2,43 @@ package sql;
 
 import org.junit.Test;
 
+import java.io.IOException;
 import java.sql.*;
+import java.util.Properties;
 import java.util.Random;
 
 /**
  * Created by 17040407 on 2017/6/28.
  */
 public class MyConnection {
+    private static String url;
+    //  private String url = "jdbc:mysql://localhost:3306/pcidsloc?rewriteBatchedStatements=true";
+    private static String user;
+    private static String password;
 
-   private String url = "jdbc:mysql://10.37.88.66:3306/pcidssit?rewriteBatchedStatements=true";
-  //  private String url = "jdbc:mysql://localhost:3306/pcidsloc?rewriteBatchedStatements=true";
-    private String user = "selffabu";
-    private String password = "YNYQYM0c8u";
+    static {
+        Properties properties = new Properties();
+        try {
+            properties.load(MyConnection.class.getClassLoader().getResourceAsStream("jdbc.properties"));
+            url = properties.getProperty("jdbcUrl");
+            user = properties.getProperty("username");
+            password = properties.getProperty("password");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
     @Test
-    public void Test(){
+    public void Test1() {
+        System.out.println(url);
+        System.out.println(user);
+        System.out.println(password);
+    }
+
+    @Test
+    public void Test() {
         Connection conn = null;
-        PreparedStatement pstm =null;
+        PreparedStatement pstm = null;
         ResultSet rt = null;
         try {
             Class.forName("com.mysql.jdbc.Driver");
@@ -26,16 +47,16 @@ public class MyConnection {
             pstm = conn.prepareStatement(sql);
             Long startTime = System.currentTimeMillis();
             Random rand = new Random();
-            int a,b,c,d;
+            int a, b, c, d;
             for (int i = 1; i <= 1000000; i++) {
-              //  pstm.setInt(1, i);
+                //  pstm.setInt(1, i);
                 pstm.setInt(2, i);
                 a = rand.nextInt(10);
                 b = rand.nextInt(10);
                 c = rand.nextInt(10);
                 d = rand.nextInt(10);
-            //    pstm.setString(3, "188"+a+"88"+b+c+"66"+d);
-                pstm.setString(1, a+""+b+""+c+""+d+""+a*b+""+c+d+""+"xxxxxxxx"+c+d+""+a+d+"x"+a);
+                //    pstm.setString(3, "188"+a+"88"+b+c+"66"+d);
+                pstm.setString(1, a + "" + b + "" + c + "" + d + "" + a * b + "" + c + d + "" + "xxxxxxxx" + c + d + "" + a + d + "x" + a);
                 pstm.addBatch();
             }
             pstm.executeBatch();
@@ -44,8 +65,8 @@ public class MyConnection {
         } catch (Exception e) {
             e.printStackTrace();
             throw new RuntimeException(e);
-        }finally{
-            if(pstm!=null){
+        } finally {
+            if (pstm != null) {
                 try {
                     pstm.close();
                 } catch (SQLException e) {
@@ -53,7 +74,7 @@ public class MyConnection {
                     throw new RuntimeException(e);
                 }
             }
-            if(conn!=null){
+            if (conn != null) {
                 try {
                     conn.close();
                 } catch (SQLException e) {
