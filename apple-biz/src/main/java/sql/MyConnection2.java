@@ -46,7 +46,7 @@ public class MyConnection2 {
     }
 
     /**
-     * Test 1.
+     * Client 1.
      */
     @Test
     public void Test1() {
@@ -57,7 +57,7 @@ public class MyConnection2 {
     }
 
     /**
-     * Test.
+     * Client.
      */
     @Test
     public void Test() {
