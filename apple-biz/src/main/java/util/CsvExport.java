@@ -10,9 +10,9 @@
  */
 package util;
 
-import org.apache.commons.collections.CollectionUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.util.CollectionUtils;
 
 import java.io.PrintWriter;
 import java.lang.reflect.InvocationTargetException;
@@ -159,9 +159,7 @@ public class CsvExport<T> {
         if (dataFileds == null || dataFileds.size() <= 0) {
             logger.error("要导出的字段信息不能为空!");
         }
-        if (CollectionUtils.isNotEmpty(titles)) {
             rowCount = titles.size();
-        }
     }
 
     /**
