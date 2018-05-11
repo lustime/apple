@@ -69,7 +69,7 @@ public class MyClassLoader extends ClassLoader {
     public static void main(String[] args) {
         MyClassLoader loader = new MyClassLoader();
         loader.setRoot("C:\\");
-        Class<?> testClass = null;
+        Class<?> testClass;
         try {
             testClass = loader.findClass("algorithm.Test1");
             Object object = testClass.newInstance();
